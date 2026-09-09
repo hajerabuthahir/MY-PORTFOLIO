@@ -1,0 +1,83 @@
+/* ================================
+   PREMIUM HERO ANIMATIONS
+================================ */
+
+.hero-left {
+    animation: heroLeftReveal 1.1s ease-out both;
+}
+
+.hero-right {
+    animation: heroRightReveal 1.2s ease-out 0.25s both;
+}
+
+@keyframes heroLeftReveal {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes heroRightReveal {
+    from {
+        opacity: 0;
+        transform: translateX(50px) scale(0.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.photo-card {
+    animation: photoFloat 5s ease-in-out infinite;
+}
+
+@keyframes photoFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.photo-card::after {
+    content: "";
+
+    position: absolute;
+    inset: -2px;
+
+    border-radius: 34px;
+
+    background: linear-gradient(
+        120deg,
+        transparent 20%,
+        rgba(174, 138, 255, 0.35),
+        transparent 80%
+    );
+
+    opacity: 0;
+
+    animation: borderGlow 4s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+@keyframes borderGlow {
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
